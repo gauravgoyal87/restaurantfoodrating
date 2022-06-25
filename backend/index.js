@@ -1,20 +1,16 @@
-const express = require('express')
-
-// 1. Require body-parser and savie it to the variable parser.
-const parser=require("body-parser")
-
+const express = require("express")
+const mongoose = require("mongoose")
 const app = express()
+const api = require("./api")
+const cors = require("cors")
+mongoose.connect("mongodb://localhost/4040")
 
-const foodController = require('./controllers/food')
-const restaurantController = require('./controllers/restaurant')
-
-// 2. Add the coded needed to make body-parser work within your app.
-// muddleware location
-app.use(parser.urlencoded({extended:true}))
-app.use(parser.json());
-
-
+app.use(express.urlencoded({extended:true}))
+app.use(express.json())
+app.use(cors({origin: "*"}))
 app.use('/api/food/', foodController)
 app.use('/api/restaurant/', restaurantController)
+app.use("/api", api)
 
-app.listen(4040, () => console.log('Server running on port test!'))
+
+app.listen(4040, () => console.log('App is listening'))

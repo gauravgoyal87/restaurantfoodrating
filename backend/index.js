@@ -12,5 +12,4 @@ app.use('/api/food/', foodController)
 app.use('/api/restaurant/', restaurantController)
 app.use("/api", api)
 
-
 app.listen(4040, () => console.log('App is listening'))

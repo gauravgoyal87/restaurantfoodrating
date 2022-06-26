@@ -1,14 +1,26 @@
 const express = require("express");
+const restaurant = require("../../models/restaurant");
 const router = express.Router();
+const Restaurant = require("../../models/restaurant");
 
-const restaurantController = require("../../controllers/restaurant");
+router.get("/", (req, res) => {
+    Restaurant.find({}).then(allRests => res.json(allRests));
+});
 
-router.get("/", restaurantController.getAll);
+router.post("/", (req, res) => {
+    const newRest = req.body;
+    console.log(newRest)
+    res.json(newRest);
+});
 
-router.post("/", restaurantController.create);
+router.put("/:food", (req, res) => {
+    Restaurant.findOneAndUpdate({restaurant: req.params.restaurant}, req.body).then(restaurant => res.json(restaurant));
+});
 
-router.put("/:id", restaurantController.update);
-
-router.delete("/:id", restaurantController.remove);
+router.delete("/:food", (req, res) => {
+    Restaurant.findOneAndDelete({restaurant: req.params.restaurant}).then(restaurant => {
+        res.json(restaurant);
+    });
+});
 
 module.exports = router;

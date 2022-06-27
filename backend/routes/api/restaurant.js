@@ -14,4 +14,6 @@ router.put("/:restaurant", restaurantController.update);
 
 router.delete("/:restaurant", restaurantController.deleteOne);
 
+// /:restaurant = id#
+
 module.exports = router;

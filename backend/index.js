@@ -9,14 +9,15 @@ const {
     PORT = 4040,
     DB_URI = "mongodb://localhost:27017/restaurantapp"
 } = process.env
-mongoose.connect(DB_URI)
+
+
 
 // The process.env is a preemptive step for when we deploy with heroku - it hides sensitive information set in a variable so we can just use the variable rather than the links themselves
 
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
 
-//I use express.url because body parser doesn't need to be required anymore, it's built in
+// I use express.url because body parser doesn't need to be required anymore, it's built in
 
 app.use(cors({origin: "*"}))
 
@@ -25,3 +26,5 @@ app.use(cors({origin: "*"}))
 app.use(routes)
 
 app.listen(PORT, () => console.log('App is listening'))
+
+module.exports = mongoose;

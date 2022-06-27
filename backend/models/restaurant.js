@@ -1,4 +1,5 @@
-const mongoose = require('../connection')
+const mongoose = require('../db/connection')
+const restaurantController = require("../controllers/restaurant")
 const Schema = mongoose.Schema
 
 const Restaurant = new Schema({
@@ -6,10 +7,10 @@ const Restaurant = new Schema({
   location: String,
   food: [
     {
-      type: Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: 'Food'
     }
   ]
 })
 
-module.exports = mongoose.model('Restaurant', Restaurant)
+module.exports = mongoose.model('restaurant', Restaurant)

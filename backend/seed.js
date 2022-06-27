@@ -6,8 +6,6 @@ Restaurant.deleteMany().then(() => {
   console.log('deleted all restaurants')
 Food.deleteMany().then(() => {
   console.log('deleted all foods')
-})
-})
 
 Restaurant.create({
     name: "Bund Dumplings",
@@ -19,40 +17,42 @@ Restaurant.create({
         comment: "very delicious",
         rating: 7
     })
-})
+}),
 
 Restaurant.create({
     name: "Bom's Barbecue",
     location: "New York City"
-}).then(bund => {
+}).then(bom => {
     Food.create({
         image: "test",
         dish: "KBBQ",
         comment: "very delicious",
         rating: 10
     })
-})
+}),
 
 Restaurant.create({
     name: "Gaurav's House",
     location: "Jersey City, NJ"
-}).then(bund => {
+}).then(gaurav => {
     Food.create({
         image: "test",
         dish: "pulse candies",
         comment: "very good",
         rating: 9
     })
-})
+}),
 
 Restaurant.create({
     name: "Quoc's Fried Chicken",
     location: "Brooklyn, NY"
-}).then(bund => {
+}).then(quoc => {
     Food.create({
         image: "test",
         dish: "fried chicken sandwich",
         comment: "perfect",
         rating: 10
     })
+})
+})
 })

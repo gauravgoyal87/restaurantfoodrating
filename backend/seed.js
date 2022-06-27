@@ -1,25 +1,59 @@
-// const mongoose = require('./connection')
-// const Food = require('./models/food')
-// const Restaurant = require('./models/restaurant')
+const mongoose = require('./connection')
+const Food = require('./models/food')
+const Restaurant = require('./models/restaurant')
 
-// Restaurant.deleteMany({}).then(() => {
-//   console.log('deleted all restaurants')
-// Food.deleteMany({}).then(() => {
-//   console.log('deleted all foods')
+Restaurant.deleteMany({}).then(() => {
+  console.log('deleted all restaurants')
+Food.deleteMany({}).then(() => {
+  console.log('deleted all foods')
+})
+})
 
-// Restaurant.create({
-//     name: "Bund Dumplings",
-//     location: "Astoria, NY",
-//     food: [
-//       {
-//         type: Schema.Types.ObjectId,
-//         ref: 'Food'
-//       }
-//     ]
-//         }).then?
-//         }
-//     })
-// })
+Restaurant.create({
+    name: "Bund Dumplings",
+    location: "Astoria, NY"
+}).then(bund => {
+    Food.create({
+        image: "test",
+        dish: "dim sum",
+        comment: "very delicious",
+        rating: 7
+    })
+})
 
+Restaurant.create({
+    name: "Bom's Barbecue",
+    location: "New York City"
+}).then(bund => {
+    Food.create({
+        image: "test",
+        dish: "KBBQ",
+        comment: "very delicious",
+        rating: 10
+    })
+})
 
-// Do we need a seed.js file or should we just make a form in the front end?? That way we don't have to seed data, it could just be input via the form unless we want to use seed data to test
+Restaurant.create({
+    name: "Gaurav's House",
+    location: "Jersey City, NJ"
+}).then(bund => {
+    Food.create({
+        image: "test",
+        dish: "pulse candies",
+        comment: "very good",
+        rating: 9
+    })
+})
+
+Restaurant.create({
+    name: "Quoc's Fried Chicken",
+    location: "Brooklyn, NY"
+}).then(bund => {
+    Food.create({
+        image: "test",
+        dish: "fried chicken sandwich",
+        comment: "perfect",
+        rating: 10
+    })
+})
+

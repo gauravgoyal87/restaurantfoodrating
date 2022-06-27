@@ -12,4 +12,6 @@ router.put("/:food",foodController.update);
 
 router.delete("/:food", foodController.deleteOne);
 
+//:food = id #
+
 module.exports = router;

@@ -16,7 +16,7 @@ mongoose.connect(DB_URI)
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
 
-//I use express.url because body parser doesn't need to be required anymore, it's built in
+// I use express.url because body parser doesn't need to be required anymore, it's built in
 
 app.use(cors({origin: "*"}))
 

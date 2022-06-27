@@ -1,7 +1,8 @@
-const mongoose = require('../connection')
+const FoodController = require('../controllers/food')
+const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
-const Food = new Schema({
+const Food =  new Schema({
   image: String,
   dish: String,
   comment: String,

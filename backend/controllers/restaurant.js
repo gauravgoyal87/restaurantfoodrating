@@ -1,5 +1,7 @@
 const Restaurant=require("../models/restaurant")
 
+// Controller functions, separated from routes
+
 const getAll = (req,res) => {
     Restaurant.find({}).then(restaurant=>{
      res.json(restaurant)

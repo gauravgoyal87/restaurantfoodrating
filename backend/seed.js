@@ -22,6 +22,4 @@
 // })
 
 
-
-
-// Do we need a seed.js file or should we just make a form in the front end?? That way we don't have to seed data, it could just be input via the form 
+// Do we need a seed.js file or should we just make a form in the front end?? That way we don't have to seed data, it could just be input via the form unless we want to use seed data to test

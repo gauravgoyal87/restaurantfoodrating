@@ -2,9 +2,9 @@ const mongoose = require('mongoose')
 const Food = require('./models/food')
 const Restaurant = require('./models/restaurant')
 
-Restaurant.deleteMany({}).then(() => {
+Restaurant.deleteMany().then(() => {
   console.log('deleted all restaurants')
-Food.deleteMany({}).then(() => {
+Food.deleteMany().then(() => {
   console.log('deleted all foods')
 })
 })
@@ -56,4 +56,3 @@ Restaurant.create({
         rating: 10
     })
 })
-

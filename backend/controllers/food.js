@@ -1,31 +1,31 @@
-const express = require('express')
-const router = express.Router()
 const Food = require("../models/food")
 
-// router.get("/", (req, res)=>{
-//     Food.find({}).then(food=>{
-//      res.json(food)
-// })
-// });
+const getAll = (req, res) => {
+    Food.find({}).then(food=>{
+     res.json(food)
+})
+};
 
-// router.get("/:dish", (req, res)=>{
-//     Food.find({dish: req.params.dish}).then(name=>{
-//         res.json(dish)
-//     })
-// });
+const create = (req, res) => {
+    Food.create(req.body)
+    .then((food) => {
+      res.json(food);
+    });
+  };
 
-// router.post("/", (req, res) => {
-//     Food.create(req.body)
-//     .then((food) => {
-//       res.json(food);
-//     });
-//   });
+const update = (req, res) => {
+  Food.findByIdAndUpdate(req.params.food, req.body).then(newFood => res.json(newFood));
+}
 
-//   router.delete("/:name", (req, res) => {
-//     Food.findOneAndDelete({dish: req.params.dish})
-//     .then((food) => {
-//       res.json(food);
-//     });
-//   });
+const deleteOne = (req, res) => {
+  Food.findByIdAndDelete(req.params.food).then(newFood => {
+      res.json(newFood);
+  });
+}
   
-// module.exports = router
+module.exports = {
+  getAll,
+  create,
+  update,
+  deleteOne,
+}

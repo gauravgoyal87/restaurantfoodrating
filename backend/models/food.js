@@ -1,13 +1,11 @@
-const mongoose = require('../db/connection')
+const mongoose = require('../connection')
 const Schema = mongoose.Schema
 
 const Food = new Schema({
-  image:String,
+  image: String,
   dish: String,
   comment: String,
   rating: Number
-
- 
 })
 
-module.exports = mongoose.model('Food', Food)
+module.exports = mongoose.model('food', Food)

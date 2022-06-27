@@ -1,15 +1,17 @@
 const express = require("express")
 const mongoose = require("mongoose")
 const app = express()
-const api = require("./api")
+const routes = require("./routes")
 const cors = require("cors")
-mongoose.connect("mongodb://localhost/4040")
+const {
+    PORT = 4040,
+    DB_URI = "mongodb://localhost:27017/restaurantapp"
+} = process.env
+mongoose.connect(DB_URI)
 
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
 app.use(cors({origin: "*"}))
-app.use('/api/food/', foodController)
-app.use('/api/restaurant/', restaurantController)
-app.use("/api", api)
+app.use(routes)
 
-app.listen(4040, () => console.log('App is listening'))
+app.listen(PORT, () => console.log('App is listening'))

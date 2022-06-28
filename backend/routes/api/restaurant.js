@@ -8,6 +8,8 @@ router.get("/", restaurantController.getAll);
 
 router.get("/:name", restaurantController.findByName);
 
+router.get(":/restaurant", restaurantController.findById);
+
 router.post("/", restaurantController.create);
 
 router.put("/:restaurant", restaurantController.update);

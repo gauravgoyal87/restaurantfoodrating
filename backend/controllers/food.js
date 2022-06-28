@@ -8,6 +8,12 @@ const getAll = (req, res) => {
 })
 };
 
+const findById = (req, res) => {
+  Food.find({id:req.params.id}).then(id => {
+    res.json(id)
+  })
+}
+
 const create = (req, res) => {
     Food.create(req.body)
     .then((food) => {
@@ -27,6 +33,7 @@ const deleteOne = (req, res) => {
   
 module.exports = {
   getAll,
+  findById,
   create,
   update,
   deleteOne,

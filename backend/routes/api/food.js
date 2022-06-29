@@ -9,6 +9,8 @@ router.get("/", foodController.getAll);
 
 router.get("/id/:food", foodController.findById);
 
+router.get("/:food", foodController.findByName);
+
 
 router.post("/", foodController.create);
 

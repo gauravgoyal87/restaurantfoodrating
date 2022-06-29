@@ -32,7 +32,7 @@ const update = (req, res) => {
 }
 
 const updateByName = (req, res) => {
-  Restaurant.findOneAndUpdate(restaurant:req.params.name, req.body).then(newRestaurant => res.json(newRestaurant));
+  Restaurant.findOneAndUpdate({restaurant:req.params.name}, req.body).then(newRestaurant => res.json(newRestaurant));
 }
 
 

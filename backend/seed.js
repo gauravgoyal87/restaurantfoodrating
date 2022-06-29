@@ -17,6 +17,7 @@ Restaurant.create({
         comment: "very delicious",
         rating: 7,
         restaurantName:  "Bund Dumplings"
+
     })
 }),
 
@@ -30,6 +31,7 @@ Restaurant.create({
         comment: "very delicious",
         rating: 10,
         restaurantName: "Bom's Barbecue"
+
     })
 }),
 

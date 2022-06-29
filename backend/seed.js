@@ -15,7 +15,8 @@ Restaurant.create({
         image: "test",
         dish: "dim sum",
         comment: "very delicious",
-        rating: 7
+        rating: 7,
+        restaurant: "Bund Dumplings"
     })
 }),
 
@@ -27,7 +28,8 @@ Restaurant.create({
         image: "test",
         dish: "KBBQ",
         comment: "very delicious",
-        rating: 10
+        rating: 10,
+        restaurant: "Bom's Barbecue"
     })
 }),
 
@@ -39,7 +41,8 @@ Restaurant.create({
         image: "test",
         dish: "pulse candies",
         comment: "very good",
-        rating: 9
+        rating: 9,
+        restaurant: "Gaurav's House"
     })
 }),
 
@@ -51,7 +54,8 @@ Restaurant.create({
         image: "test",
         dish: "fried chicken sandwich",
         comment: "perfect",
-        rating: 10
+        rating: 10,
+        restaurant: "Quoc's Fried Chicken"
     })
 })
 })

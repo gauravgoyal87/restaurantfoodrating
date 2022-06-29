@@ -16,7 +16,8 @@ Restaurant.create({
         dish: "dim sum",
         comment: "very delicious",
         rating: 7,
-        restaurant: "Bund Dumplings"
+        restaurantName:  "Bund Dumplings"
+
     })
 }),
 
@@ -29,7 +30,8 @@ Restaurant.create({
         dish: "KBBQ",
         comment: "very delicious",
         rating: 10,
-        restaurant: "Bom's Barbecue"
+        restaurantName: "Bom's Barbecue"
+
     })
 }),
 
@@ -42,7 +44,7 @@ Restaurant.create({
         dish: "pulse candies",
         comment: "very good",
         rating: 9,
-        restaurant: "Gaurav's House"
+        restaurantName: "Gaurav's House"
     })
 }),
 
@@ -55,7 +57,7 @@ Restaurant.create({
         dish: "fried chicken sandwich",
         comment: "perfect",
         rating: 10,
-        restaurant: "Quoc's Fried Chicken"
+        restaurantName: "Quoc's Fried Chicken"
     })
 })
 })

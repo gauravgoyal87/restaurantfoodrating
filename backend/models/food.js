@@ -7,7 +7,7 @@ const Food =  new Schema({
   dish: String,
   comment: String,
   rating: Number,
-  restaurant: String
+  restaurantName: String
 })
 
 module.exports = mongoose.model('food', Food)

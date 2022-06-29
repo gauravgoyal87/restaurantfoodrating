@@ -9,7 +9,7 @@ const getAll = (req,res) => {
 };
 
 const findByName = (req,res) => {
-    Restaurant.find({name:req.params.name}).then(name=>{
+    Restaurant.find({restaurant:req.params.name}).then(name=>{
         res.json(name)
     })
 };
@@ -31,6 +31,11 @@ const update = (req, res) => {
   Restaurant.findByIdAndUpdate(req.params.restaurant, req.body).then(restaurant => res.json(restaurant));
 }
 
+const updateByName = (req, res) => {
+  Restaurant.findOneAndUpdate(restaurant:req.params.name, req.body).then(newRestaurant => res.json(newRestaurant));
+}
+
+
 const deleteOne = (req, res) => {
     Restaurant.findByIdAndDelete(req.params.restaurant)
     .then((restaurant) => {
@@ -44,5 +49,6 @@ module.exports = {
   findById,
   create,
   update,
-  deleteOne
+  deleteOne,
+  updateByName
 }

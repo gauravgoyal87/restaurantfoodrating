@@ -8,15 +8,18 @@ router.get("/", restaurantController.getAll);
 
 router.get("/:name", restaurantController.findByName);
 
-router.get(":/restaurant", restaurantController.findById);
+router.get("/id/:restaurant", restaurantController.findById);
 
 router.post("/", restaurantController.create);
 
-// router.put("/:restaurant", restaurantController.update);
+router.put("/id/:restaurant", restaurantController.update);
 
-router.put(`/restaurant/:restaurant`, restaurantController.updateByName);
 
-router.delete("/:restaurant", restaurantController.deleteOne);
+router.put("/:name", restaurantController.updateByName)
+
+router.delete("/id/:restaurant", restaurantController.deleteOne)
+
+router.delete("/:name", restaurantController.deleteByName)
 
 // /:restaurant = id#
 

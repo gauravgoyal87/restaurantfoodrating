@@ -8,13 +8,11 @@ const getAll = (req, res) => {
 })
 };
 
-
 const findByName = (req,res) => {
   Food.find({food:req.params.dish}).then(name=>{
       res.json(name)
   })
 };
-
 
 const findById = (req, res) => {
   Food.find({id:req.params.id}).then(id => {

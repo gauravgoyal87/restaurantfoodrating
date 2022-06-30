@@ -5,20 +5,20 @@ const Restaurant=require("../models/restaurant")
 const getAll = (req,res) => {
     Restaurant.find({}).then(restaurant=>{
      res.json(restaurant)
-})
+  });
 };
 
 const findByName = (req,res) => {
     Restaurant.find({name:req.params.name}).then(name=>{
         res.json(name)
-    })
+    });
 };
 
 const findById = (req, res) => {
   Restaurant.find({id:req.params.id}).then(id => {
     res.json(id)
-  })
-}
+  });
+};
 
 const create = (req, res) => {
     Restaurant.create(req.body)

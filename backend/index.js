@@ -10,8 +10,6 @@ const {
     DB_URI = "mongodb://localhost:27017/restaurantapp"
 } = process.env
 
-
-
 // The process.env is a preemptive step for when we deploy with heroku - it hides sensitive information set in a variable so we can just use the variable rather than the links themselves
 
 app.use(express.urlencoded({extended:true}))

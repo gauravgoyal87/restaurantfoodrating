@@ -6,9 +6,7 @@ const foodController = require("../../controllers/food");
 
 router.get("/", foodController.getAll);
 
-
 router.get("/id/:food", foodController.findById);
-
 
 router.post("/", foodController.create);
 

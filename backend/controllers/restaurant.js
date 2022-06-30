@@ -43,7 +43,7 @@ const deleteOne = (req, res) => {
   };
 
 const deleteByName = (req, res) => {
-  Restaurant.findOneAndDelete(req.params.restaurant)
+  Restaurant.findOneAndDelete({ name:req.params.name })
   .then((restaurant) => {
     res.json(restaurant);
   });

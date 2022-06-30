@@ -8,6 +8,7 @@ router.get("/", foodController.getAll);
 
 router.get("/id/:food", foodController.findById);
 
+
 router.post("/", foodController.create);
 
 router.put("/id/:food",foodController.update);

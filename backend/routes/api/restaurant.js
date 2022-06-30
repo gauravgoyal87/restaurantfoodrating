@@ -14,6 +14,7 @@ router.post("/", restaurantController.create);
 
 router.put("/id/:restaurant", restaurantController.update);
 
+
 router.put("/:name", restaurantController.updateByName)
 
 router.delete("/id/:restaurant", restaurantController.deleteOne)

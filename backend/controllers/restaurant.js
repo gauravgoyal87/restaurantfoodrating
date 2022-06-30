@@ -9,7 +9,9 @@ const getAll = (req,res) => {
 };
 
 const findByName = (req,res) => {
+
     Restaurant.find({ name:req.params.name }).then(name=>{
+
         res.json(name)
     })
 };
@@ -32,6 +34,7 @@ const update = (req, res) => {
 }
 
 const updateByName = (req, res) => {
+
   Restaurant.findOneAndUpdate({ name:req.params.name }, req.body, {new: true}).then(restaurant => res.json(restaurant));
 }
 
@@ -56,6 +59,8 @@ module.exports = {
   create,
   update,
   deleteOne,
+
   updateByName,
   deleteByName
+
 }
